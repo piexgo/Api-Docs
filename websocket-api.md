@@ -38,8 +38,8 @@ The Trade Streams push newest trade information.
 ```json
 {
     "market":"BTC_USDT",
-    "price":67832200000000,
-    "quantity":24000000,
+    "price":6783.22,
+    "quantity":2.4,
     "timestamp":1541569853272940
 }
 ```
