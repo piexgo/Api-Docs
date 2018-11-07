@@ -18,14 +18,14 @@ The Trade Streams push newest trade information.
 
 **Stream Name:** trade:\<symbol>
 
-**Subscribe**
+**Subscribe:**
 ```json
 {
     "op":"subscribe",
     "args":"trade:BTC_USDT"
 }
 ```
-**Unsubscribe**
+**Unsubscribe:**
 ```json
 {
     "op":"unsubscribe",
@@ -54,14 +54,14 @@ The Orderbook Streams push the depth book.
 
 **Stream Name:** orderBook10:\<symbol>
 
-**Subscribe**
+**Subscribe:**
 ```json
 {
     "op":"subscribe",
     "args":"orderBook10:BTC_USDT"
 }
 ```
-**Unsubscribe**
+**Unsubscribe:**
 ```json
 {
     "op":"unsubscribe",
