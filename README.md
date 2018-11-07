@@ -5,7 +5,7 @@
 
 Name | Description
 ------------ | ------------ 
-[rest-api.md](./rest-api.md) | Details on the Rest API (/api)
+[rest-api.md](./rest-api.md) | Details on the Rest API
 [websocket-api.md](./websocket-api.md) | Details on available streams and payloads
 
 
