@@ -2,7 +2,7 @@
 
 # General WSS information
 
-* The base endpoint is: **wss://api.piexgo.co/ws**
+* The base endpoint is: **wss://wsapi.piexgo.co/ws**
 
 * All symbols for streams are **UPPERCASE**, such as BTC_USDT
 
