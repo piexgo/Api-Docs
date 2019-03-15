@@ -88,7 +88,7 @@ The signature is calculated with the query string and secret key as inputs to a 
 
 ### Check server time
 ```
-GET /v1/time
+GET /api/v1/time
 ```
 Get the current server time
 
@@ -107,7 +107,7 @@ NONE
 
 ### Pairs information
 ```
-GET /v1/symbols
+GET /api/v1/symbols
 ```
 Current exchange  symbol information
 
@@ -135,7 +135,7 @@ NONE
 ## Market Data endpoints
 ### Order book
 ```
-GET /v1/orderBook
+GET /api/v1/orderBook
 ```
 
 **Parameters:**
@@ -168,7 +168,7 @@ symbol | STRING | YES |
 
 ### Recent trades
 ```
-GET /v1/trades
+GET /api/v1/trades
 ```
 Get recent trades (up to last 500).
 
@@ -187,7 +187,7 @@ symbol | STRING | YES |
 
 ### 24H ticker statistics
 ```
-GET /v1/tickers
+GET /api/v1/tickers
 ```
 
 **Parameters:**
@@ -214,7 +214,7 @@ NONE
 
 ### Symbol ticker
 ```
-GET /v1/ticker
+GET /api/v1/ticker
 ```
 Latest price for a symbol
 
@@ -246,7 +246,7 @@ symbol | STRING | YES |
 ## Trade or Account endpoints
 ### New order  (TRADE)
 ```
-POST /v1/order  (HMAC signature)
+POST /api/v1/order  (HMAC signature)
 ```
 Send in a new order.
 
@@ -254,17 +254,25 @@ Send in a new order.
 
 Name | Type | Mandatory | Description
 ------------ | ------------ | ------------ | ------------
-symbol | STRING | YES |
-side | ENUM | YES |
-type | ENUM | NO |
+price | DECIMAL | NO |
 quantity | DECIMAL | YES |
-price | DECIMAL | YES |
+side | ENUM | YES |
+symbol | STRING | YES |
+type | ENUM | YES |
+stop_price | DECIMAL | NO |
+recv_window | LONG | YES |
+timestamp | LONG | YES |
+
+
 
 Additional mandatory parameters based on `type`:
 
 Type | Additional mandatory parameters
 ------------ | ------------
 `LIMIT` |  `quantity`, `price`
+`MARKET` | `quantity`
+`STOP_LIMIT` | `quantity`, `price`, `stop_price`
+
 
 
 **Response:**
@@ -274,7 +282,7 @@ Type | Additional mandatory parameters
 
 ### Cancel order
 ```
-DELETE /v1/orderCancel  (HMAC signature)
+DELETE /api/v1/orderCancel  (HMAC signature)
 ```
 Cancel an open order.
 
@@ -294,7 +302,7 @@ order_id | STRING | YES |
 
 ### Current open orders 
 ```
-GET /v1/openOrders  (HMAC signature)
+GET /api/v1/openOrders  (HMAC signature)
 ```
 
 **Parameters:**
@@ -343,7 +351,7 @@ page | STRING | NO |
 
 ### All orders (USER_DATA)
 ```
-GET /v1/orderHistory  (HMAC signature)
+GET /api/v1/orderHistory  (HMAC signature)
 ```
 Get all order hisroty (filled or canceled).
 
@@ -364,7 +372,7 @@ page | STRING | NO |
 
 ### Account information (USER_DATA)
 ```
-GET /v1/account  (HMAC signature)
+GET /api/v1/account  (HMAC signature)
 ```
 Get current account information.
 
