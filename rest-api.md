@@ -65,19 +65,20 @@ timestamp | 1552356480000
 
 
 ### Example 1 (LIMIT): As a query string
-* **Sort the query string components by byte order.:** price=6830&quantity=10&side=BUY&symbol=BTC_USDT&type=LIMIT&recv_window=5000&timestamp=1552356480000
+* **Sort the query string components by byte order.:** price=6830&quantity=10&recv_window=5000&side=BUY&symbol=BTC_USDT&timestamp=1552356480000&type=LIMIT
 * **HMAC SHA512 signature:** Calculate the Signature:
 The signature is calculated with the query string and secret key as inputs to a keyed hash function.
 * Add the resulting value to the query header as a Signature parameter. 
 
 ### Example 2 (MARKET): As a query string
-* **Sort the query string components by byte order.:** quantity=10&side=BUY&symbol=BTC_USDT&type=MARKET&recv_window=5000&timestamp=1552356480000
+* **Sort the query string components by byte order.:** 
+quantity=10&recv_window=5000&side=BUY&symbol=BTC_USDT&timestamp=1552356480000&type=MARKET
 * **HMAC SHA512 signature:** Calculate the Signature:
 The signature is calculated with the query string and secret key as inputs to a keyed hash function.
 * Add the resulting value to the query header as a Signature parameter. 
 
 ### Example 3 (STOP_LIMIT): As a query string
-* **Sort the query string components by byte order.:** price=6830&quantity=10&side=BUY&symbol=BTC_USDT&type=STOP_LIMIT&stop_price=6830&recv_window=5000&timestamp=1552356480000
+* **Sort the query string components by byte order.:** price=6830&quantity=10&recv_window=5000&side=BUY&stop_price=6830&symbol=BTC_USDT&timestamp=1552356480000&type=STOP_LIMIT
 * **HMAC SHA512 signature:** Calculate the Signature:
 The signature is calculated with the query string and secret key as inputs to a keyed hash function.
 * Add the resulting value to the query header as a Signature parameter. 
