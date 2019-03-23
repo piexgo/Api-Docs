@@ -283,7 +283,7 @@ Type | Additional mandatory parameters
 
 ### Cancel order
 ```
-DELETE /api/v1/orderCancel  (HMAC signature)
+DELETE /api/v1/cancelOrder  (HMAC signature)
 ```
 Cancel an open order.
 
@@ -294,7 +294,8 @@ Name | Type | Mandatory | Description
 ------------ | ------------ | ------------ | ------------
 symbol | STRING | YES |
 order_id | STRING | YES |
-
+recv_window | LONG | YES |
+timestamp | LONG | YES |
 
 **Response:**
 ```javascript
@@ -310,7 +311,7 @@ GET /api/v1/openOrders  (HMAC signature)
 
 Name | Type | Mandatory | Description
 ------------ | ------------ | ------------ | ------------
-page | STRING | NO |
+page | STRING | YES |
 
 * 50 records per page, page parameters starting from 0
 
@@ -362,7 +363,7 @@ Get all order hisroty (filled or canceled).
 Name | Type | Mandatory | Description
 ------------ | ------------ | ------------ | ------------
 symbol | STRING | YES |
-page | STRING | NO |
+page | STRING | YES |
 
 
 
