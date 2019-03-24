@@ -2,9 +2,9 @@
 
 # General WSS information
 
-* The base test-endpoint is: **wss://wsapi.piexgo.co/ws**
+* The base test-endpoint is: **wss://api.piexgo.com/ws**
 
-* All symbols for streams are **UPPERCASE**, such as BTC_USDT
+* All symbols for streams are **lowercase**, such as btc_usdt
 
   
 
@@ -16,20 +16,20 @@ The Trade Streams push newest trade information.
 
   
 
-**Stream Name:** trade:\<symbol>
+**Stream Name:** dealinfo.\<symbol>
 
 **Subscribe:**
 ```json
 {
     "op":"subscribe",
-    "args":"trade:BTC_USDT"
+    "topic":"dealinfo.btc_usdt"
 }
 ```
 **Unsubscribe:**
 ```json
 {
     "op":"unsubscribe",
-    "args":"trade:BTC_USDT"
+    "topic":"dealinfo.btc_usdt"
 }
 ```
 
@@ -37,73 +37,112 @@ The Trade Streams push newest trade information.
 
 ```json
 {
-    "market":"BTC_USDT",
-    "price":6783.22,
-    "quantity":2.4,
-    "timestamp":1541569853272940
+    "topic":"dealinfo",
+    "symbol":"btc_usdt",
+    "deals":[
+        {
+            "time":1553326491272,
+            "direct":0,
+            "price":"4003.9000000000",
+            "vol":"0.01510000"
+        },
+        {
+            "time":1553326491273,
+            "direct":0,
+            "price":"4003.9000000000",
+            "vol":"0.23490000"
+        }
+    ]
 }
 ```
 
   
 
-## Orderbook Streams
+## Depth Streams
 
-The Orderbook Streams push the depth book.
+The Depth Streams push the depth book. 
 
   
 
-**Stream Name:** orderBook10:\<symbol>
+**Stream Name:** depth.\<symbol>
 
 **Subscribe:**
 ```json
 {
     "op":"subscribe",
-    "args":"orderBook10:BTC_USDT"
+    "topic":"depth.btc_usdt"
 }
 ```
 **Unsubscribe:**
 ```json
 {
     "op":"unsubscribe",
-    "args":"orderBook10:BTC_USDT"
+    "topic":"depth.btc_usdt"
 }
 ```
 **Response Payload:**
 ```json
 {
-    "err_code":0,
-    "err_msg":"",
-    "Data":{
-        "asks":[
-            {
-                "price":"6783.2200000000",
-                "qty":"0.24000000",
-                "timestamp":1541569853167087
-            },
-            {
-                "price":"7006.4200000000",
-                "qty":"21.57000000",
-                "timestamp":1541569853167087
-            }
-        ],
-        "bids":[
-            {
-                "price":"6704.6000000000",
-                "qty":"0.01000000",
-                "timestamp":1541569853167087
-            },
-            {
-                "price":"6688.6900000000",
-                "qty":"0.70000000",
-                "timestamp":1541569853167087
-            }
-        ]
-    }
+    "topic":"depth",
+    "symbol":"btc_usdt",
+    "buy_book":[
+        {
+            "index":0,
+            "price":3990.67,
+            "qty":0.21
+        },
+        {
+            "index":1,
+            "price":3990.56,
+            "qty":0.2
+        },
+        {
+            "index":2,
+            "price":3990.52,
+            "qty":0.24
+        },
+        {
+            "index":3,
+            "price":3990.49,
+            "qty":0.43
+        },
+        {
+            "index":4,
+            "price":3990.48,
+            "qty":1.02
+        }
+    ],
+    "sell_book":[
+        {
+            "index":0,
+            "price":3990.69,
+            "qty":0.07
+        },
+        {
+            "index":1,
+            "price":3990.89,
+            "qty":0.18
+        },
+        {
+            "index":2,
+            "price":3991.01,
+            "qty":1.4
+        },
+        {
+            "index":3,
+            "price":3991.28,
+            "qty":1.97
+        },
+        {
+            "index":4,
+            "price":3991.29,
+            "qty":0.46
+        }
+    ],
+    "change_id":36296
 }
 ```
 
 ## TODO
-1. Aggregate Trade Streams
-2. Kline Streams
-3. All Market Tickers Stream
-4. Partial Book Depth Streams
+1. Kline Streams
+2. All Market Tickers Stream
