@@ -121,15 +121,15 @@ NONE
 {
     "data":[
         {
-            "price_precision":6,
-            "amount_precision":4,
-            "base":"ETH",
-            "symbol":"eth_btc",
-            "fee":"0.001",
-            "quote":"BTC"
+            "symbol": "BTC_USDT",
+            "maker_fee": 0.0005,
+            "taker_fee": 0.0015,
+            "amount_precision": 4,
+            "price_precision": 2
         }
     ],
-    "status":"ok"
+    "msg":"ok",
+    "err_code": 0
 }
 ```
 
@@ -151,19 +151,21 @@ symbol | STRING | YES |
 {
     "asks":[
         {
-            "price":"7902",
-            "volume":"1.98"
+            "index": 0,
+            "price": "4029.89",
+            "volume": "1.5118"
         }
     ],
     "bids":[
         {
-            "price":"8011",
-            "volume":"0.8"
+            "index": 0,
+            "price": "4029.62",
+            "volume": "0.7400"
         }
     ],
     "ts":1541684184,
-    "symbol":"btc_usdt",
-    "status":"ok"
+    "msg":"ok",
+    "err_code": 0
 }
 ```
 
@@ -197,18 +199,23 @@ NONE
 **Response:**
 ```javascript
 {
-    "status":"ok",
-    "data":[
-        {
-            "low":"0.00010000",
-            "changeRate":"0.00",
-            "high":"377547814.62904483",
-            "symbol":"eth_btc",
-            "last":"3.00000000",
-            "vol":"1335.0000",
-            "open":"0.00000000"
+    "data":{
+        "BTC":{
+            "symbol": "ETH_BTC",
+            "last_price": 0.034283,
+            "open_price": 0.03431,
+            "high": 0.03431,
+            "low": 0.034166,
+            "change": -0.0786942582337489,
+            "volume": 1707,
+            "circulation": 0,
+            "total": 0,
+            "amount_1d": 32,
+            "volume_1d": 1704.82
         }
-    ]
+    },
+    "msg":"ok",
+    "err_code": 0
 }
 ```
 
@@ -230,16 +237,21 @@ symbol | STRING | YES |
 **Response:**
 ```javascript
 {
-    "status":"ok",
     "ticker":{
-        "last":"10.000000",
-        "vol":"71.000000",
-        "high":"40.000000",
-        "open":"0.000000",
-        "changeRate":"0.000000",
-        "low":"10.000000"
+        "symbol": "BTC_USDT",
+        "last_price": 4029.88,
+        "open_price": 4029.05,
+        "high": 4029.88,
+        "low": 4022.71,
+        "change": 0.02060038967001966,
+        "volume": 1734,
+        "circulation": 17452050,
+        "total": 21000000,
+        "amount_1d": 6977606.47,
+        "volume_1d": 1728.66
     },
-    "ts":1541684558.181
+    "msg":"ok",
+    "err_code": 0
 }
 ```
 
@@ -283,7 +295,7 @@ Type | Additional mandatory parameters
 
 ### Cancel order
 ```
-DELETE /api/v1/cancelOrder  (HMAC signature)
+POST /api/v1/cancelOrder  (HMAC signature)
 ```
 Cancel an open order.
 
@@ -304,7 +316,7 @@ timestamp | LONG | YES |
 
 ### Current open orders 
 ```
-GET /api/v1/openOrders  (HMAC signature)
+POST /api/v1/openOrders  (HMAC signature)
 ```
 
 **Parameters:**
@@ -322,38 +334,13 @@ page | STRING | YES |
     "err_msg":"OK",
     "total":10,
     "next_page":false,
-    "list":[
-        {
-            "order_price":"56.0000000000",
-            "price":"56.0000000000",
-            "volume":"34.00000000",
-            "remain":"34.00000000",
-            "amount":"0.00000000",
-            "type":"buy",
-            "timestamp":1541681493,
-            "order_id":"1060499209679016099",
-            "market":"PXG_BTC",
-            "status":0
-        },
-        {
-            "order_price":"10.0000000000",
-            "price":"10.0000000000",
-            "volume":"1.00000000",
-            "remain":"1.00000000",
-            "amount":"0.00000000",
-            "type":"buy",
-            "timestamp":1541681476,
-            "order_id":"1060499209679016098",
-            "market":"PXG_BTC",
-            "status":0
-        }
-    ]
+    "list":[]
 }
 ```
 
 ### All orders (USER_DATA)
 ```
-GET /api/v1/orderHistory  (HMAC signature)
+POST /api/v1/orderHistory  (HMAC signature)
 ```
 Get all order hisroty (filled or canceled).
 
@@ -374,7 +361,7 @@ page | STRING | YES |
 
 ### Account information (USER_DATA)
 ```
-GET /api/v1/account  (HMAC signature)
+POST /api/v1/account  (HMAC signature)
 ```
 Get current account information.
 
@@ -387,23 +374,7 @@ NONE
 {
     "err_code":0,
     "err_msg":"ok",
-    "data":[
-        {
-            "currency":"USDT",
-            "balance":"112118195.47738258",
-            "locked":"15026.00000000"
-        },
-        {
-            "currency":"BTC",
-            "balance":"106540000.39445214",
-            "locked":"2205.66000000"
-        },
-        {
-            "currency":"ETH",
-            "balance":"95867066.03966032",
-            "locked":"0.00000000"
-        }
-    ]
+    "data":[]
 }
 ```
 
