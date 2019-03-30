@@ -125,6 +125,7 @@ Get the current server time
 NONE
 
 **Response:**
+
 ```javascript
 {
     "server_time":1552356480000
@@ -144,6 +145,7 @@ Current exchange  symbol information
 NONE
 
 **Response:**
+
 Name | Type |  Description
 ------------ | ------------ | ------------ 
 symbol | STRING | Market
@@ -182,6 +184,7 @@ symbol | STRING | YES |
 
 
 **Response:**
+
 Name | Type |  Description
 ------------ | ------------ | ------------ 
 index | INT | Order index
@@ -223,6 +226,7 @@ Name | Type | Mandatory | Description
 symbol | STRING | YES |
 
 **Response:**
+
 Name | Type |  Description
 ------------ | ------------ | ------------ 
 time | LONG |  Order deal time
@@ -255,6 +259,7 @@ GET /api/v1/tickers
 NONE
 
 **Response:**
+
 Name | Type |  Description
 ------------ | ------------ | ------------ 
 symbol | STRING | BTC_USDT
@@ -287,6 +292,7 @@ volume_1d | DECIMAL | USDT deal quantity
 
 
 ### Symbol ticker
+
 ```
 GET /api/v1/ticker
 ```
@@ -301,6 +307,7 @@ symbol | STRING | YES |
 
 
 **Response:**
+
 ```javascript
 {
     "ticker":{
@@ -351,6 +358,7 @@ Type | Additional mandatory parameters
 
 
 **Response:**
+
 ```javascript
 {
     "err_code": 0,
@@ -376,6 +384,7 @@ recv_window | LONG | YES | Expire times
 timestamp | LONG | YES | Server time
 
 **Response:**
+
 ```javascript
 {
     "err_code":0,
@@ -396,6 +405,7 @@ symbol | STRING | YES | Order market
 order_id | STRING | YES | Order ID
 
 **Response:**
+
 Name | Type | Description
 ------------ | ------------ | ------------
 order_price | STRING | Order price |
@@ -456,6 +466,7 @@ page | STRING | YES | Starting from zero
 * 50 records per page, page parameters starting from 0
 
 **Response:**
+
 Name | Type | Description
 ------------ | ------------ | ------------
 stop | STRING | Order stop price |
@@ -544,6 +555,7 @@ Get current account information.
 NONE
 
 **Response:**
+
 Name | Type | Description
 ------------ | ------------ | ------------
 market | STRING | Symbol |
