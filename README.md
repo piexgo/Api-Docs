@@ -6,6 +6,7 @@
 Name | Description
 ------------ | ------------ 
 [rest-api.md](./rest-api.md) | Details on the Rest API
+[errors.md](./errors.md) | Descriptions of possible error messages from the Rest API
 [websocket-api.md](./websocket-api.md) | Details on available streams and payloads
 
 
