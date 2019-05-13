@@ -392,6 +392,31 @@ timestamp | LONG | YES | Server time
 }
 ```
 
+### Cancel orders  (TRADE)
+```
+POST /api/v1/cancelOrders  (HMAC signature)
+```
+Cancel multiple open orders.
+
+
+**Parameters:**
+
+Name | Type | Mandatory | Description
+------------ | ------------ | ------------ | ------------
+symbol | STRING | YES | Order market
+order_id | STRING | YES | Orders ID Separated by commas
+recv_window | LONG | YES | Expire times
+timestamp | LONG | YES | Server time
+
+**Response:**
+
+```javascript
+{
+    "err_code":0,
+    "msg":"ok"
+}
+```
+
 ### Single order info (USER_DATA) 
 ```
 POST /api/v1/orderInfo  (HMAC signature)
