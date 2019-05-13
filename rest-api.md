@@ -404,7 +404,7 @@ Cancel multiple open orders.
 Name | Type | Mandatory | Description
 ------------ | ------------ | ------------ | ------------
 symbol | STRING | YES | Order market
-order_id | STRING | YES | Orders ID Separated by commas
+order_id | STRING | YES | Orders ID Separated by commas (Up to 50.)
 recv_window | LONG | YES | Expire times
 timestamp | LONG | YES | Server time
 
