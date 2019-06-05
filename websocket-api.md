@@ -166,7 +166,6 @@ The orders and balance change.
 }
 ```
 **Order Response Payload:**
-*** order status [0:open; 2:finish; 4:cancel]
 ```json
 {
     "topic":"pinfo",
