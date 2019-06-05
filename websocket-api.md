@@ -157,7 +157,7 @@ The orders and balance change.
     "op":"subscribe",
     "topic":"pinfo",
     "apikey":"f730a934-0631-4b65-a4f9-d8df20600139",
-    "apisecret":"bc13094354d3bef8db1e5912b59af90586a37324"
+    "signature":"0/pjGPSKpHNlSwJaRmcIkPG/viwkRW7wkRlY2tCbBRM="
 }
 ```
 **Unsubscribe:**
