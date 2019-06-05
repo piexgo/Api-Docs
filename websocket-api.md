@@ -166,6 +166,7 @@ The orders and balance change.
 }
 ```
 **Order Response Payload:**
+*** order status [0:open; 2:finish; 4:cancel]
 ```json
 {
     "topic":"pinfo",
@@ -182,7 +183,7 @@ The orders and balance change.
         "timestamp":1559734776,
         "order_id":"1136203593297424385",
         "market":"BTC_USDT",
-        "status":2, ##[0:open; 2:finish; 4:cancel]
+        "status":2, 
         "flag":0,
         "id":1559734776923657000
     }
