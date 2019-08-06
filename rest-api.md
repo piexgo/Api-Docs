@@ -525,6 +525,92 @@ stop | STRING | STOP_LIMIT Order stop price
 }
 ```
 
+### Transaction History orders (USER_DATA)
+```
+POST /api/v1/tradeOrderHistory  (HMAC signature)
+```
+Get transaction order hisroty.
+
+
+**Parameters:**
+
+Name | Type | Mandatory | Description
+------------ | ------------ | ------------ | ------------
+page | STRING | YES | Starting from zero
+
+
+
+**Response:**
+
+```javascript
+{
+    "err_code":0,
+    "err_msg":"OK",
+    "total":10,
+    "next_page":false,
+    "list":[
+        {
+            "order_price": "3330.4800000000",
+            "stop": "0.0000000000",
+            "price": "3330.4800000000",
+            "market_price": "0.0000000000",
+            "volume": "2.00000000",
+            "remain": "2.00000000",
+            "amount": "0.00000000",
+            "type": "buy",
+            "timestamp": 1553831017,
+            "order_id": "1111070125244588064",
+            "market": "BTC_USDT",
+            "status": 4,
+            "flag": 0
+        }
+    ]
+}
+```
+
+### Canceled History orders (USER_DATA)
+```
+POST /api/v1/canceledOrderHistory  (HMAC signature)
+```
+Get canceled order hisroty.
+
+
+**Parameters:**
+
+Name | Type | Mandatory | Description
+------------ | ------------ | ------------ | ------------
+page | STRING | YES | Starting from zero
+
+
+
+**Response:**
+
+```javascript
+{
+    "err_code":0,
+    "err_msg":"OK",
+    "total":10,
+    "next_page":false,
+    "list":[
+        {
+            "order_price": "3330.4800000000",
+            "stop": "0.0000000000",
+            "price": "3330.4800000000",
+            "market_price": "0.0000000000",
+            "volume": "2.00000000",
+            "remain": "2.00000000",
+            "amount": "0.00000000",
+            "type": "buy",
+            "timestamp": 1553831017,
+            "order_id": "1111070125244588064",
+            "market": "BTC_USDT",
+            "status": 4,
+            "flag": 0
+        }
+    ]
+}
+```
+
 ### History orders (USER_DATA)
 ```
 POST /api/v1/orderHistory  (HMAC signature)
