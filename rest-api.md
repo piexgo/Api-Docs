@@ -613,7 +613,7 @@ page | STRING | YES | Starting from zero
 
 ### History orders (USER_DATA)
 ```
-POST /api/v1/orderHistory  (HMAC signature)
+POST /api/v1/orderHistory  (HMAC signature)(To be removed) 
 ```
 Get all order hisroty (filled or canceled).
 
