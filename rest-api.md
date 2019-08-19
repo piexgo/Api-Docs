@@ -31,7 +31,7 @@
 # SIGNED Endpoint security
 * `SIGNED` endpoints require an additional parameter, `signature`, to be
   sent in the  `query string`.
-* Endpoints use `HMAC SHA256` signatures. The `HMAC SHA256 signature` is a keyed `HMAC SHA256` operation.
+* Endpoints use `HMAC SHA512` signatures. The `HMAC SHA512 signature` is a keyed `HMAC SHA512` operation.
   Use your `secretKey` as the key and `totalParams` as the value for the HMAC operation.
 * The `signature` is **case sensitive**.
 
