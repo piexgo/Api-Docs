@@ -459,7 +459,7 @@ Order status (status)
 ```javascript
 {
     "err_code":0,
-    "err_msg":"OK",
+    "msg":"OK",
     "data":{
         "order_price": "3330.4800000000",
         "price": "3330.4800000000",
@@ -502,7 +502,7 @@ stop | STRING | STOP_LIMIT Order stop price
 ```javascript
 {
     "err_code":0,
-    "err_msg":"OK",
+    "msg":"OK",
     "total":10,
     "next_page":false,
     "list":[
@@ -545,7 +545,7 @@ page | STRING | YES | Starting from zero
 ```javascript
 {
     "err_code":0,
-    "err_msg":"OK",
+    "msg":"OK",
     "total":10,
     "next_page":false,
     "list":[
@@ -588,7 +588,7 @@ page | STRING | YES | Starting from zero
 ```javascript
 {
     "err_code":0,
-    "err_msg":"OK",
+    "msg":"OK",
     "total":10,
     "next_page":false,
     "list":[
@@ -632,7 +632,7 @@ page | STRING | YES | Starting from zero
 ```javascript
 {
     "err_code":0,
-    "err_msg":"OK",
+    "msg":"OK",
     "total":10,
     "next_page":false,
     "list":[
@@ -678,7 +678,7 @@ otc_locked | STRING | Symbol otc locked |
 ```javascript
 {
     "err_code":0,
-    "err_msg":"ok",
+    "msg":"ok",
     "data":[
         {
             "market": "USDT",   
